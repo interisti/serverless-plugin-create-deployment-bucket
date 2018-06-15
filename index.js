@@ -7,18 +7,23 @@ class CreateDeploymentBucketPlugin {
     this.provider = this.serverless.getProvider('aws')
 
     this.hooks = {
-      'before:deploy:deploy': this.beforeDeploy.bind(this)
+      'aws:common:validate:validate': this.onAWSValidate.bind(this)
     }
   }
 
-  beforeDeploy() {
+  onAWSValidate() {
+    // ignore if not deploy
+    if (!this.serverless.processedInput.commands.includes('deploy')) {
+      return
+    }
+
     const bucketName = this.getBucketName()
     if (!bucketName) {
       this.serverless.cli.log(
         'No custom deployment bucket is set, nothing to create'
       )
 
-      return Promise.resolve()
+      return
     }
 
     return this.bucketExists(bucketName)
