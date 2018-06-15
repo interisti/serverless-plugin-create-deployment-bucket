@@ -1,0 +1,25 @@
+{
+  "name": "serverless-plugin-create-deployment-bucket",
+  "version": "0.0.1",
+  "description": "Serverless plugin to create a deployment bucket when using custom deploymentBucket option",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interisti/serverless-plugin-create-deployment-bucket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interisti/serverless-plugin-create-deployment-bucket/issues"
+  },
+  "homepage": "https://github.com/interisti/serverless-plugin-create-deployment-bucket#readme",
+  "keywords": [
+    "serverless",
+    "deployment",
+    "bucket",
+    "aws"
+  ]
+}
